@@ -28,7 +28,7 @@ const htmlMinifierRequire = require("module").createRequire(
 const terser = htmlMinifierRequire("terser");
 const CleanCSS = htmlMinifierRequire("clean-css");
 
-const MINIFY_CACHE_MAX = 2000;
+const MINIFY_CACHE_MAX = 100;
 const minifyJsCache = new Map();
 const minifyCssCache = new Map();
 
