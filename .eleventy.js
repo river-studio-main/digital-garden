@@ -119,7 +119,7 @@ const { isDecodableImage } = require("./src/helpers/imageFormat.js");
 // Build containers have few CPUs and little memory; the default queue
 // concurrency of 10 holds ~10 decoded images in memory at once without
 // finishing any faster. Sharp already parallelizes within each job.
-Image.concurrency = 2;
+Image.concurrency = 1;
 
 // Image generation is started fire-and-forget during transforms (the markup
 // only needs statsSync), but every pending job is awaited in the
