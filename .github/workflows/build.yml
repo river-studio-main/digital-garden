@@ -32,10 +32,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v7
-      - uses: cjerrington/actions-eleventy@v2
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          args: '--output=dist'
-          install_dependencies: true
+          node-version: '23'
+      - run: npm install
+      - run: npm run build 
       - name: Setup Pages
         uses: actions/configure-pages@v6
       - name: Upload artifact
