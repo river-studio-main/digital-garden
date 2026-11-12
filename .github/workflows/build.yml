@@ -32,7 +32,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v7
-      - uses: TartanLlama/actions-eleventy@v1.3
+      - uses: cjerrington/actions-eleventy@v2
         with:
           args: '--output=dist'
           install_dependencies: true
