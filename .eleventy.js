@@ -800,6 +800,9 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addTransform("htmlMinifier", async function(content) {
+    if (process.env.SKIP_HTML_MINIFY === "1") {
+      return content;
+    }
     if (
       (process.env.NODE_ENV === "production" || process.env.ELEVENTY_ENV === "prod") &&
       (this.page.outputPath || "").endsWith(".html")

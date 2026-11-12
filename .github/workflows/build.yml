@@ -37,7 +37,9 @@ jobs:
         with:
           node-version: '22'
       - run: npm install
-      - run: npm run build 
+      - run: npm run build
+        env:
+          SKIP_HTML_MINIFY: "1" 
       - name: Setup Pages
         uses: actions/configure-pages@v6
       - name: Upload artifact
